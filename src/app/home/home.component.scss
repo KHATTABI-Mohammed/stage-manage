@@ -1,0 +1,128 @@
+.home-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h1, h2 {
+  color: #303F9F; /* Couleur indigo 700 */
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+mat-icon {
+  font-size: 24px;
+  color: #3F51B5; /* Couleur indigo 500 */
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 40px;
+  background-color: #E8EAF6; /* Couleur indigo 100 */
+  border-radius: 8px;
+  animation: fadeIn 1s ease-out;
+}
+
+.welcome-section img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+.tips-section, .info-section, .calendar-section, .resources-section, .contact-section, .user-conditions {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-out;
+}
+
+.tips-section ul, .resources-section ul, .calendar-section ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.tips-section li, .resources-section li, .calendar-section li {
+  margin-bottom: 10px;
+}
+
+a {
+  color: #303F9F; /* Couleur indigo 700 */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #303F9F; /* Couleur indigo 700 */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #1E88E5; /* Couleur indigo 500 */
+}
+
+.verified-icon {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: 20px auto;
+}
+
+.contact-section {
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 10px;
+  }
+
+  .welcome-section h1 {
+    font-size: 2em;
+  }
+
+  .welcome-section p {
+    font-size: 1em;
+  }
+
+  .tips-section h2, .info-section h2, .calendar-section h2, .resources-section h2, .contact-section h2, .user-conditions h2 {
+    font-size: 1.5em;
+  }
+
+  .verified-icon {
+    width: 80px;
+    height: 80px;
+  }
+}

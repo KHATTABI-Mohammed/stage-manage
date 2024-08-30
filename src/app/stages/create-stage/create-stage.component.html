@@ -1,0 +1,53 @@
+<div class="stage-form">
+  <div class="text-center form-header">
+    <h2><mat-icon>add_circle</mat-icon> Ajouter un Stage</h2>
+  </div>
+  <form [formGroup]="stageForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <!-- Champ Titre du Stage -->
+      <div class="col-md-12 col-sm-12">
+        <mat-form-field appearance="outline" color="warn">
+          <mat-label><mat-icon>title</mat-icon> Titre du Stage</mat-label>
+          <input matInput formControlName="titre_stage" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Champ Description du Stage -->
+      <div class="col-md-12 col-sm-12">
+        <mat-form-field appearance="outline" color="warn">
+          <mat-label><mat-icon>description</mat-icon> Description du Stage</mat-label>
+          <textarea matInput formControlName="description_stage" required></textarea>
+        </mat-form-field>
+      </div>
+
+      <!-- Champ Date de Début -->
+      <div class="col-md-6 col-sm-12">
+        <mat-form-field appearance="outline" color="warn">
+          <mat-label><mat-icon>calendar_today</mat-icon> Date de Début</mat-label>
+          <input matInput formControlName="startDate" type="date" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Champ Date de Fin -->
+      <div class="col-md-6 col-sm-12">
+        <mat-form-field appearance="outline" color="warn">
+          <mat-label><mat-icon>calendar_today</mat-icon> Date de Fin</mat-label>
+          <input matInput formControlName="endDate" type="date" required />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <!-- Bouton de Soumission -->
+    <div class="form-footer">
+      <button
+        mat-raised-button
+        color="primary"
+        [ngStyle]="{ 'background-color': '#f99a41', 'color': 'white' }"
+        type="submit"
+        [disabled]="stageForm.invalid"
+      >
+        <mat-icon>add</mat-icon> Ajouter
+      </button>
+    </div>
+  </form>
+</div>

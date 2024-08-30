@@ -1,0 +1,82 @@
+<div class="project-detail-container">
+  <mat-card *ngIf="project" class="fade-in">
+    <mat-card-header>
+      <mat-card-title>{{ project.nom }}</mat-card-title>
+      <mat-card-subtitle style="color:black">{{ project.description }}</mat-card-subtitle>
+    </mat-card-header>
+    <br>
+    <mat-card-content>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label><mat-icon>work_outline</mat-icon> Nom du Projet</mat-label>
+        <input matInput [(ngModel)]="project.nom" [readonly]="!isEditing">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label><mat-icon>description</mat-icon> Description</mat-label>
+        <textarea matInput [(ngModel)]="project.description" [readonly]="!isEditing"></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label><mat-icon>event</mat-icon> Date de Rendu</mat-label>
+        <input matInput [(ngModel)]="project.dateRendu" [readonly]="!isEditing" type="date">
+      </mat-form-field>
+
+      <!-- Vérification si le projet est déjà soumis -->
+      <div *ngIf="user?.role === 'stagiairesCompte'" class="submission-section">
+        <ng-container *ngIf="!isSubmitted; else submittedProject">
+          <form [formGroup]="ProjetForm" (ngSubmit)="onSubmit()" class="fade-in">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label><mat-icon>link</mat-icon> Lien vers le projet</mat-label>
+              <input matInput [readonly]="!isDeadLine(project)" formControlName="projetLien" type="text">
+            </mat-form-field>
+            <div class="file-upload">
+              <label class="file-label">Rapport de stage</label>
+              <input type="file" (change)="onFileSelected($event, 'rapport')" required class="file-input" [disabled]="!isDeadLine(project)" formControlName="rapport">
+            </div>
+            <button mat-raised-button color="accent" [disabled]="ProjetForm.invalid" type="submit">Rendre</button>
+          </form>
+        </ng-container>
+      </div>
+
+      <!-- Affichage du projet déjà soumis -->
+      <ng-template #submittedProject>
+        <h3 *ngIf="user?.role !== 'encadrantCompte'" class="fade-in">Projet déjà soumis</h3>
+        <p><strong>Lien du projet :</strong><a [href]="'http://'+rapportProjetLien.projetLien" target="_blank">{{ rapportProjetLien.projetLien }}</a></p>
+        <p><strong>Rapport de stage :</strong> <a [href]="'http://localhost:5000/'+rapportProjetLien.rapport" target="_blank">Télécharger le rapport</a></p>
+      </ng-template>
+
+      <!-- Section des rendus pour l'encadrant -->
+      <div *ngIf="user?.role === 'encadrantCompte'" class="encadrant-section">
+        <div *ngFor="let rendu of projectRapport">
+          <mat-card class="rendu-card fade-in" *ngIf="rendu.id===project.id">
+            <mat-card-header>
+              <mat-card-title>Rendu de {{rendu.infostagiaire}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p><strong>Stagiaire ID:</strong> {{ rendu.idStagiaire }}</p>
+              <p><strong>Lien du projet :</strong> 
+                <a [href]="'http://' + rendu.projetLien" target="_blank">{{ rendu.projetLien }}</a>
+              </p>
+              <p><strong>Rapport :</strong> 
+                <a [href]="'http://localhost:5000/' + rendu.rapport" target="_blank">Télécharger le rapport</a>
+              </p>
+            </mat-card-content>
+            <button mat-mini-button color="accent" (click)="valider(rendu)" [disabled]="stagiaire?.isValider" style="width: 130px;margin-top: 10px;position: absolute;bottom: 10px;right: 15px"> <mat-icon *ngIf="!stagiaire?.isValider">check</mat-icon>{{stagiaire?.isValider ? "Validé" : "Valider"}}</button>
+          </mat-card>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="goBack()"><mat-icon>arrow_back</mat-icon> Retour</button>
+      <button mat-raised-button color="accent" *ngIf="!isEditing && user?.role === 'encadrantCompte'" (click)="edit()">
+        <mat-icon>edit</mat-icon> Modifier
+      </button>
+      <button mat-raised-button color="accent" *ngIf="isEditing" (click)="save()">
+        <mat-icon>save</mat-icon> Enregistrer
+      </button>
+      <button mat-raised-button color="warn" *ngIf="isEditing" (click)="cancel()">
+        <mat-icon>cancel</mat-icon> Annuler
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

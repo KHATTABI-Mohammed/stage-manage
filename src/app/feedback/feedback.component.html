@@ -1,0 +1,32 @@
+<app-loader *ngIf="isLoading"></app-loader>
+<div class="feedback-container" *ngIf="!isLoading">
+  <h2><mat-icon>question_answer</mat-icon> Poser une question ou laisser un feedback</h2>
+  <form (ngSubmit)="onSubmit()" [formGroup]="feedbackForm">
+    <mat-form-field appearance="outline">
+      <mat-label><mat-icon>feedback</mat-icon> Votre question ou feedback</mat-label>
+      <textarea matInput formControlName="question"></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="feedbackForm.invalid">
+      <mat-icon>send</mat-icon> Envoyer
+    </button>
+  </form>
+
+  <h3>Questions et Feedbacks</h3>
+  <div *ngFor="let item of feedbacks" class="feedback-item" [ngClass]="{'replied': item.reponses.length > 0}">
+    <p><strong>Question:</strong> {{ item.question }}</p>
+
+    <div *ngFor="let reponse of item.reponses" class="reponse">
+      <p><strong>Réponse:</strong> {{ reponse }}</p>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Répondre</mat-label>
+        <textarea matInput [(ngModel)]="item.newReponse"></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="accent" (click)="submitReponse(item)">
+        <mat-icon>reply</mat-icon> Répondre
+      </button>
+    </div>
+  </div>
+</div>

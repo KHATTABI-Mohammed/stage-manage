@@ -1,0 +1,40 @@
+<div class="stage-detail">
+    <mat-card class="card">
+      <mat-card-content>
+        <div class="detail-section">
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Titre</mat-label>
+            <input matInput [(ngModel)]="stage.titre_stage" [readonly]="!isEditing">
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Description</mat-label>
+            <textarea matInput [(ngModel)]="stage.description_stage" [readonly]="!isEditing"></textarea>
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Date de début</mat-label>
+            <input matInput [(ngModel)]="stage.startDate" type="date" [readonly]="!isEditing">
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Date de fin</mat-label>
+            <input matInput [(ngModel)]="stage.endDate" type="date" [readonly]="!isEditing">
+          </mat-form-field>
+        </div>
+  
+        <div class="button-group">
+          <button mat-raised-button color="primary" (click)="edit()" *ngIf="!isEditing" [hidden]="user?.role == 'stagiairesCompte'">
+            <mat-icon>edit</mat-icon> Modifier
+          </button>
+          <button mat-raised-button color="accent" (click)="save()" *ngIf="isEditing">
+            <mat-icon>save</mat-icon> Enregistrer
+          </button>
+          <button mat-raised-button color="warn" (click)="cancel()" *ngIf="isEditing">
+            <mat-icon>cancel</mat-icon> Annuler
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

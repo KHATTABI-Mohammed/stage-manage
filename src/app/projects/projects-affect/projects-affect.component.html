@@ -1,0 +1,24 @@
+<h1 mat-dialog-title class="dialog-title">Affecter Stagiaire</h1>
+<div mat-dialog-content class="dialog-content">
+  <form [formGroup]="assignForm">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Choisir un stagiaire</mat-label>
+      <mat-select formControlName="stagiaireID" required>
+        <mat-option *ngFor="let stagiaire of stagiaires" [value]="stagiaire?.id">
+          {{ stagiaire?.id }} - {{ stagiaire?.nom }} {{ stagiaire?.prenom }} ({{ stagiaire?.idProjets?.length}})
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="assignForm.controls['stagiaireID'].invalid && assignForm.controls['stagiaireID'].touched">
+        Vous devez sélectionner un stagiaire.
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions class="dialog-actions">
+  <button mat-button (click)="onCancel()">
+    <mat-icon>close</mat-icon> Annuler
+  </button>
+  <button mat-button [disabled]="assignForm.invalid" (click)="onAssign()" cdkFocusInitial>
+    <mat-icon>check</mat-icon> Affecter
+  </button>
+</div>

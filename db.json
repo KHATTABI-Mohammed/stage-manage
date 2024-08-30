@@ -1,0 +1,267 @@
+{
+  "stagiairesCompte": [
+    {
+      "id": "FJ30493",
+      "username": "OUAHAB",
+      "email": "abderrahim.ouahab23@ump.ac.ma",
+      "password": "med"
+    },
+    {
+      "id": "F12345",
+      "username": "KHATTABI",
+      "email": "mohammed.khattabi23@ump.ac.ma",
+      "password": "med"
+    },
+    {
+      "id": "F45678",
+      "username": "AYA",
+      "email": "aya@gmail.com",
+      "password": "med"
+    },
+    {
+      "id": "F12349",
+      "username": "reda",
+      "email": "reda@gmail.com",
+      "password": "reda"
+    }
+  ],
+  "encadrantCompte": [
+    {
+      "id": "1",
+      "username": "province",
+      "email": "province@gmail.com",
+      "password": "province"
+    }
+  ],
+  "login": [
+    {
+      "username": "province",
+      "email": "province@gmail.com",
+      "role": "encadrantCompte",
+      "userId": "1",
+      "id": "1"
+    }
+  ],
+  "stagiairesInfo": [
+    {
+      "id": "FJ30493",
+      "nom": "ABDERRAHIM",
+      "prenom": "OUAHAB",
+      "cin": "FJ30493",
+      "sexe": "male",
+      "telephone": "0632394897",
+      "adresse": "26, rue el jadida hay riad ahfir",
+      "diplome": "IDSCC",
+      "titreDiplome": "IDSCC",
+      "typeStage": "stage_observation",
+      "cv": "uploads/cv-1724602602239.pdf",
+      "photo": "uploads/photo-1724602602318.png",
+      "idProjets": [
+        "d737"
+      ],
+      "idStage": "12e1",
+      "startDate": "2024-08-01",
+      "endDate": "2024-08-30",
+      "isValider": true
+    },
+    {
+      "id": "F12345",
+      "nom": "KHATTABI",
+      "prenom": "Mohammed",
+      "cin": "F1234",
+      "sexe": "male",
+      "telephone": "0632394897",
+      "adresse": "26, rue el jadida hay riad ahfir",
+      "diplome": "GI",
+      "titreDiplome": "GI",
+      "typeStage": "stage_observation",
+      "cv": "uploads/cv-1724602744780.pdf",
+      "photo": "uploads/photo-1724602744847.jpg",
+      "idProjets": [
+        "6d9f",
+        "d737"
+      ],
+      "idStage": "9cda",
+      "startDate": "2024-10-01",
+      "endDate": "2024-10-31",
+      "isValider": true
+    },
+    {
+      "id": "F45678",
+      "nom": "Aya",
+      "prenom": "EL MADANI",
+      "cin": "F5678",
+      "sexe": "female",
+      "telephone": "0632394897",
+      "adresse": "26, rue el jadida hay riad ahfir",
+      "diplome": "IBSS",
+      "titreDiplome": "IBSS",
+      "typeStage": "stage_observation",
+      "cv": "uploads/cv-1724603066191.pdf",
+      "photo": "uploads/photo-1724603066248.jpeg",
+      "idProjets": [
+        "207d"
+      ],
+      "idStage": "d016",
+      "startDate": "2024-09-01",
+      "endDate": "2024-09-30"
+    },
+    {
+      "id": "F12349",
+      "nom": "reda",
+      "prenom": "reda",
+      "cin": "F34534",
+      "sexe": "male",
+      "telephone": "0632394897",
+      "email": "reda@gmail.com",
+      "adresse": "26, rue el jadida hay riad ahfir",
+      "diplome": "GI",
+      "titreDiplome": "GI",
+      "typeStage": "stage_observation",
+      "cv": "uploads/cv-1724835506292.png",
+      "photo": "uploads/photo-1724835506297.ico"
+    }
+  ],
+  "stages": [
+    {
+      "id": "12e1",
+      "titre_stage": "Développeur Web Junior",
+      "description_stage": "[Nom de l'entreprise] est une startup innovante spécialisée dans le développement de solutions digitales pour les entreprises. Nous travaillons avec une équipe dynamique et passionnée pour créer des produits qui transforment la manière dont les entreprises opèrent au quotidien. Rejoignez-nous pour faire partie d'une aventure excitante au cœur de la transformation digitale.\n\nMissions :\nEn tant que stagiaire Développeur Web Junior, vous participerez activement à la conception, au développement et à l'amélioration de nos applications web. Sous la supervision d'un développeur senior, vos missions incluront :\n\nParticiper au développement front-end et back-end des applications web.\nCollaborer avec l'équipe UX/UI pour implémenter des interfaces utilisateur intuitives.\nIntégrer des API et des services tiers.\nTester et déboguer les applications pour garantir leur performance et leur sécurité.\nParticiper aux réunions de projet et apporter des idées pour améliorer nos produits.\nRédiger de la documentation technique.\nProfil recherché :\nNous recherchons un(e) étudiant(e) motivé(e) et curieux(se), en cours de formation en informatique ou développement web, avec les compétences suivantes :\n\nConnaissance des langages de programmation web : HTML, CSS, JavaScript.\nExpérience avec des frameworks tels que React, Angular ou Vue.js est un plus.\nCompréhension des bases de données relationnelles (ex : MySQL, PostgreSQL).\nNotions de développement back-end en Node.js, Python ou PHP.\nCapacité à travailler en équipe et à communiquer efficacement.\nCuriosité et envie d'apprendre de nouvelles technologies.\nCe que nous offrons :\n\nUne expérience de travail enrichissante dans une startup en pleine croissance.\nUn encadrement personnalisé pour développer vos compétences.\nUne possibilité de pré-embauche à l'issue du stage.\nUn environnement de travail collaboratif et stimulant.\nUne indemnité de stage conforme à la réglementation en vigueur.\nComment postuler :\nSi ce stage vous intéresse, merci d'envoyer votre CV et une lettre de motivation à [adresse email de contact]. Indiquez dans votre candidature les projets sur lesquels vous avez travaillé et pourquoi vous souhaitez rejoindre notre équipe.\n\nNous avons hâte de découvrir votre profil et de discuter avec vous de cette opportunité !",
+      "startDate": "2024-08-01",
+      "endDate": "2024-08-30",
+      "stageAffectations": [
+        {
+          "infoStagiaire": "ABDERRAHIM OUAHAB:FJ30493",
+          "dateAffectation": "2024-08-25"
+        }
+      ]
+    },
+    {
+      "id": "d016",
+      "titre_stage": " Assistant Marketing Digital",
+      "description_stage": "est une PME spécialisée dans le secteur de la mode, offrant des produits de haute qualité à un public international. Nous mettons un point d'honneur à l'innovation et à la créativité pour satisfaire nos clients et nous démarquer sur un marché en constante évolution.\n\nMissions :\nEn tant que stagiaire Assistant Marketing Digital, vous jouerez un rôle clé dans l'élaboration et la mise en œuvre de notre stratégie marketing. Encadré(e) par notre responsable marketing, vous serez amené(e) à :\n\nParticiper à la création et à la gestion des campagnes publicitaires en ligne (Google Ads, Facebook Ads).\nAider à la gestion des réseaux sociaux (création de contenu, planification, analyse des performances).\nContribuer à l'optimisation du site web pour le SEO (référencement naturel).\nAnalyser les données de performance des campagnes (Google Analytics, outils de reporting) et proposer des améliorations.\nParticiper à la rédaction de newsletters et de contenu pour le blog de l'entreprise.\nAider à l’organisation d’événements en ligne (webinaires, lancements de produits).\nAssurer une veille concurrentielle et suivre les tendances du marché.\nProfil recherché :\nNous recherchons un(e) étudiant(e) en marketing, communication, ou commerce, avec un intérêt marqué pour le digital et les réseaux sociaux. Les compétences suivantes sont souhaitées :\n\nBonne connaissance des outils de marketing digital (Google Ads, Facebook Business Manager).\nCompétences rédactionnelles solides et créativité.\nConnaissance des bases du SEO et des techniques de rédaction web.\nMaîtrise des outils bureautiques (Word, Excel, PowerPoint).\nAutonomie, rigueur et sens de l'organisation.\nIntérêt pour le secteur de la mode est un plus.\nCe que nous offrons :\n\nUn environnement de travail dynamique et créatif.\nUne expérience professionnelle valorisante avec des responsabilités réelles.\nUn accompagnement personnalisé pour développer vos compétences.\nUne opportunité de travailler sur des projets concrets et impactants.\nUne indemnité de stage en accord avec la réglementation en vigueur.\nComment postuler :\nEnvoyez-nous votre CV et une lettre de motivation à [adresse email de contact]. Mentionnez dans votre candidature vos expériences précédentes, vos compétences en marketing digital, et pourquoi vous souhaitez rejoindre notre équipe.\n\nNous sommes impatients de découvrir votre candidature et de collaborer avec vous pour faire grandir notre marque !",
+      "startDate": "2024-09-01",
+      "endDate": "2024-09-30",
+      "stageAffectations": [
+        {
+          "infoStagiaire": "Aya EL MADANI:F5678",
+          "dateAffectation": "2024-08-25"
+        }
+      ]
+    },
+    {
+      "id": "9cda",
+      "titre_stage": " Développeur(se) Logiciel",
+      "description_stage": "est une startup innovante spécialisée dans le développement de solutions SaaS pour la gestion de projets d'entreprise. Nous nous concentrons sur la création d'outils intuitifs et puissants qui aident les entreprises à optimiser leurs processus et à améliorer leur productivité.\n\nMissions :\nEn tant que stagiaire Développeur(se) Logiciel, vous rejoindrez notre équipe technique dynamique et participerez activement au développement de nouvelles fonctionnalités pour notre plateforme SaaS. Vous serez encadré(e) par un développeur senior et travaillerez en étroite collaboration avec les équipes produit et design. Vos principales missions seront :\n\nContribuer au développement de nouvelles fonctionnalités sur notre application web.\nParticiper à l'amélioration de l'architecture de notre code en collaboration avec l'équipe technique.\nEffectuer des tests unitaires et d'intégration pour assurer la qualité du code.\nParticiper aux revues de code et proposer des solutions pour optimiser la performance de l'application.\nCollaborer avec les équipes produit pour comprendre les besoins des utilisateurs et proposer des solutions adaptées.\nAider à la maintenance et au débogage de l'application existante.\nParticiper aux discussions sur l'évolution technologique de la plateforme.\nProfil recherché :\nNous recherchons un(e) étudiant(e) en informatique ou dans une discipline connexe, passionné(e) par le développement logiciel et souhaitant acquérir une expérience pratique dans un environnement startup. Les compétences suivantes sont souhaitées :\n\nBonne connaissance des langages de programmation tels que JavaScript, Python, ou Java.\nFamiliarité avec les frameworks front-end (React, Angular, ou Vue.js) et back-end (Node.js, Django, ou Spring).\nConnaissance des bases de données relationnelles (MySQL, PostgreSQL) et/ou NoSQL (MongoDB).",
+      "startDate": "2024-10-01",
+      "endDate": "2024-10-31",
+      "stageAffectations": [
+        {
+          "infoStagiaire": "KHATTABI Mohammed:F1234",
+          "dateAffectation": "2024-08-25"
+        }
+      ]
+    }
+  ],
+  "projets": [
+    {
+      "id": "d737",
+      "nom": "Plateforme de Gestion de Projets",
+      "description": "Créez une plateforme web permettant aux équipes de gérer leurs projets en ligne. Les utilisateurs peuvent créer des projets, ajouter des tâches, attribuer des membres de l'équipe à des tâches spécifiques, fixer des échéances et suivre la progression des projets.\n\nTechnologies :\n\nFront-end : React, Angular ou Vue.js\nBack-end : Node.js avec Express ou Django\nBase de données : PostgreSQL ou MongoDB\nAuthentification : JWT ou OAuth\n",
+      "dateRendu": "2024-09-30",
+      "affectationStagiaires": [
+        {
+          "stagiaireID": "FJ30493",
+          "infoStagiaire": "ABDERRAHIM OUAHAB:FJ30493",
+          "dateAffectation": "2024-08-25",
+          "isValider": true
+        },
+        {
+          "stagiaireID": "F12345",
+          "infoStagiaire": "KHATTABI Mohammed:F1234",
+          "dateAffectation": "2024-08-26"
+        }
+      ]
+    },
+    {
+      "id": "6d9f",
+      "nom": " Analyse Prédictive des Ventes",
+      "description": "Utilisez des techniques de data science pour analyser les données de vente historiques d'une entreprise et créer un modèle prédictif capable d'estimer les ventes futures. Le projet peut inclure l'extraction des données, le nettoyage, l'analyse exploratoire, et la création de modèles de prévision.",
+      "dateRendu": "2024-10-31",
+      "affectationStagiaires": [
+        {
+          "stagiaireID": "F12345",
+          "infoStagiaire": "KHATTABI Mohammed:F1234",
+          "dateAffectation": "2024-08-25",
+          "isValider": true
+        }
+      ]
+    },
+    {
+      "id": "207d",
+      "nom": "Application de Suivi des Habitudes",
+      "description": "Développez une application mobile qui aide les utilisateurs à créer et à suivre des habitudes quotidiennes. L'application permet aux utilisateurs de définir des objectifs, de suivre leur progression, de recevoir des rappels, et de voir des statistiques sur leurs habitudes.",
+      "dateRendu": "2024-08-30",
+      "affectationStagiaires": [
+        {
+          "stagiaireID": "F45678",
+          "infoStagiaire": "Aya EL MADANI:F5678",
+          "dateAffectation": "2024-08-25"
+        }
+      ]
+    }
+  ],
+  "projetsRapports": [
+    {
+      "id": "6d9f",
+      "nom": " Analyse Prédictive des Ventes",
+      "description": "Utilisez des techniques de data science pour analyser les données de vente historiques d'une entreprise et créer un modèle prédictif capable d'estimer les ventes futures. Le projet peut inclure l'extraction des données, le nettoyage, l'analyse exploratoire, et la création de modèles de prévision.",
+      "dateRendu": "2024-10-31",
+      "affectationStagiaires": [
+        {
+          "stagiaireID": "F12345",
+          "infoStagiaire": "KHATTABI Mohammed:F1234",
+          "dateAffectation": "2024-08-25"
+        }
+      ],
+      "idStagiaire": "F12345",
+      "infostagiaire": "KHATTABI Mohammed:F1234",
+      "projetLien": "wwww",
+      "rapport": "uploads/rapport-1724674093842.ico",
+      "isValide": true
+    },
+    {
+      "id": "d737",
+      "nom": "Plateforme de Gestion de Projets",
+      "description": "Créez une plateforme web permettant aux équipes de gérer leurs projets en ligne. Les utilisateurs peuvent créer des projets, ajouter des tâches, attribuer des membres de l'équipe à des tâches spécifiques, fixer des échéances et suivre la progression des projets.\n\nTechnologies :\n\nFront-end : React, Angular ou Vue.js\nBack-end : Node.js avec Express ou Django\nBase de données : PostgreSQL ou MongoDB\nAuthentification : JWT ou OAuth\n",
+      "dateRendu": "2024-09-30",
+      "affectationStagiaires": [
+        {
+          "stagiaireID": "FJ30493",
+          "infoStagiaire": "ABDERRAHIM OUAHAB:FJ30493",
+          "dateAffectation": "2024-08-25"
+        },
+        {
+          "stagiaireID": "F12345",
+          "infoStagiaire": "KHATTABI Mohammed:F1234",
+          "dateAffectation": "2024-08-26"
+        }
+      ],
+      "idStagiaire": "FJ30493",
+      "infostagiaire": "ABDERRAHIM OUAHAB:FJ30493",
+      "projetLien": ",;njk",
+      "rapport": "uploads/rapport-1724681889197.png",
+      "isValide": true
+    }
+  ],
+  "feedbacks": [
+    {
+      "id": "2f53",
+      "question": "slam",
+      "reponses": [],
+      "newReponse": ""
+    }
+  ],
+  "upload": [],
+  "uploadRapport": []
+}

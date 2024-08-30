@@ -1,0 +1,17 @@
+.footer-toolbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px; /* Adjust this height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 10px;
+  color: black;
+ z-index: 1; /* Ensure the footer is above other content */
+  background: linear-gradient(180deg, white, orange); /* Linear gradient on the footer */
+  border-top: 1px solid orange;
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.5); /* Adjust shadow direction for footer */
+}

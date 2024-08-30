@@ -1,0 +1,38 @@
+.dialog-title {
+  font-size: 1.5rem;
+  color: #3f51b5;
+  text-align: center;
+}
+
+.dialog-content {
+  min-width: 400px; // Augmentez la largeur selon vos besoins
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 10px;
+  background: #f1f1f1;
+  border-top: 1px solid #ddd;
+}
+
+button {
+  min-width: 100px;
+}
+
+mat-icon {
+  margin-right: 5px;
+}

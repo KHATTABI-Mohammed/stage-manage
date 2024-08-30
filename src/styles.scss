@@ -1,0 +1,124 @@
+/* Import Angular Material theme */
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* Ensure HTML and body elements take up the full height of the page */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Global styles for the body */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Ensures content takes available height */
+    min-height: 100vh; /* Ensures body takes at least the full view height */
+    background-color: rgb(250, 248, 248);
+}
+
+/* Apply a consistent font family globally */
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif, "Helvetica Neue", sans-serif; 
+}
+
+/* Ensure form elements like inputs and buttons are styled consistently */
+input, button, select, textarea {
+    font-family: inherit; /* Inherit the global font-family */
+}
+
+/* A consistent style for headings across the app */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Georgia', serif;
+    font-weight: normal;
+    margin: 0.5em 0;
+}
+
+/* Ensure images and videos are responsive by default */
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Global box-sizing rule to include padding and border in element width/height */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Default anchor link styling */
+a {
+    color: #f99a41;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #d17b36;
+}
+
+/* Global button styling */
+button {
+    background-color: #f99a41;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d17b36;
+}
+
+/* Ensure consistent form field styling across the app */
+mat-form-field {
+    width: 100%;
+    height: 100%;
+    
+}
+
+/* Set consistent padding and margin for sections */
+section {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Handle lists globally */
+ul, ol {
+    padding-left: 20px;
+    margin: 0 0 20px 0;
+}
+
+/* Responsive utility classes */
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}

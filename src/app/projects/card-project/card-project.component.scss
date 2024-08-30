@@ -1,0 +1,120 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+  }
+  
+  .project-card {
+    width: 100%;
+    max-width: 450px; /* Limite la largeur pour une meilleure présentation */
+    margin: 15px;
+    border: 1px solid #ff9800;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+  
+    mat-card-header {
+      background-color: #ffe0b2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    mat-card-title {
+      font-weight: bold;
+      color: #ef6c00;
+    }
+  
+    mat-card-content {
+      font-size: 14px;
+      color: #616161;
+    }
+  
+    mat-card-actions {
+      display: flex;
+      justify-content: flex-end;
+      
+      button {
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+        
+        &:hover {
+          transform: scale(1.1);
+        }
+        
+        mat-icon {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+  
+  .fab-container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    gap: 15px;
+  }
+  
+  button.mat-fab {
+    background-color: #f37021;
+  }
+  
+  button.mat-fab:hover {
+    background-color: #e64a19;
+  }
+  
+  .mat-icon {
+    font-size: 18px;
+    color: white;
+  }
+  
+  .no-stages-message {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    font-size: 18px;
+    color: #ff5722;
+    background-color: #fff3e0;
+    border: 1px solid #ff9800;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    mat-icon {
+      margin-right: 10px;
+      color: #ff5722;
+    }
+  }
+  
+  .valid-icon {
+    color: #4caf50;
+  }
+  
+  .invalid-icon {
+    color: #f44336;
+  }
+  .stagiaire-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .stagiaire-valid {
+    color: #4CAF50; /* Vert pour les stagiaires validés */
+  }
+  
+  .stagiaire-invalid {
+    color: #F44336; /* Rouge pour les stagiaires non validés */
+  }
+  

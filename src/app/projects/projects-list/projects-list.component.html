@@ -1,0 +1,75 @@
+<app-loader *ngIf="isLoading"></app-loader>
+
+<!-- Barre de recherche -->
+<div class="search-container" *ngIf="!isLoading">
+  <mat-form-field appearance="fill">
+    <mat-label>Recherche</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Rechercher un projet">
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+</div>
+<!-- Message when no stagiaires are available -->
+<div *ngIf="!isLoading && projects.length === 0" class="message-card animate__animated animate__fadeIn">
+  <mat-card class="message-card">
+    <mat-card-content>
+      <mat-icon>info_outline</mat-icon>
+      <p *ngIf="user?.role === 'stagiairesCompte'">
+        Vous n'avez pas encore des projets à faire. <br>
+      
+      </p>
+      <p *ngIf="user?.role === 'encadrantCompte'">
+        Vous n'avez pas encore créé des projets à faire. 
+        <strong><a routerLink="/add-project">Cliquez ici pour créer un nouveau projet.</a></strong>
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
+<!-- Tableau des projets -->
+<div class="table-container" *ngIf="!isLoading && projects.length > 0" @fadeIn>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Colonne pour le nom du projet -->
+    <ng-container matColumnDef="nom">
+      <th mat-header-cell *matHeaderCellDef> Nom </th>
+      <td mat-cell *matCellDef="let project"> {{ project.nom }} </td>
+    </ng-container>
+
+    <!-- Colonne pour la date de rendu -->
+    <ng-container matColumnDef="dateRendu">
+      <th mat-header-cell *matHeaderCellDef> Date de Rendu </th>
+      <td mat-cell *matCellDef="let project"> {{ project.dateRendu | date: 'dd/MM/yyyy' }} </td>
+    </ng-container>
+
+    <!-- Colonne pour les stagiaires affectés -->
+    <ng-container matColumnDef="stagiaires">
+      <th mat-header-cell *matHeaderCellDef> Stagiaires Affectés </th>
+      <td mat-cell *matCellDef="let project">
+        <div *ngIf="project.affectationStagiaires?.length; else noAffectation">
+          <mat-icon>people</mat-icon> {{project.affectationStagiaires?.length}}
+        </div>
+        <ng-template #noAffectation>Aucun stagiaire affecté</ng-template>
+      </td>
+    </ng-container>
+
+    <!-- Colonne pour les actions -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let project">
+        <button mat-raised-button color="primary" [routerLink]="['/card-project', project.id]">
+          <mat-icon>visibility</mat-icon> Voir Détails
+        </button>
+     
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+<!-- Bouton flottant d'action -->
+<div class="fab-container" *ngIf="user?.role === 'encadrantCompte' && !isLoading">
+  <button mat-fab color="primary" aria-label="Ajouter un projet" routerLink="/create-project">
+    <mat-icon style="font-size: 23px;margin: 0px">add</mat-icon>
+  </button>
+</div>

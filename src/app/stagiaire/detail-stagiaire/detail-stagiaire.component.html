@@ -1,0 +1,76 @@
+<div class="stagiaire-detail animate__animated animate__fadeIn">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <a [href]="'http://localhost:5000/'+stagiaire.photo" target="_blank">
+          <img [src]="'http://localhost:5000/'+stagiaire.photo" alt="{{ stagiaire.nom }}">
+        </a>
+        {{ stagiaire.nom }} {{ stagiaire.prenom }}
+      </mat-card-title>
+   
+    </mat-card-header>
+    <mat-card-content>
+      <div class="detail-section">
+        <mat-form-field appearance="outline">
+          <mat-label>Nom</mat-label>
+          <input matInput [(ngModel)]="stagiaire.nom" [readonly]="!isEditing">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Prénom</mat-label>
+          <input matInput [(ngModel)]="stagiaire.prenom" [readonly]="!isEditing">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>CIN</mat-label>
+          <input matInput [(ngModel)]="stagiaire.cin" [readonly]="!isEditing">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Sexe</mat-label>
+          <mat-select [(ngModel)]="stagiaire.sexe" [disabled]="!isEditing">
+            <mat-option value="male">Homme</mat-option>
+            <mat-option value="female">Femme</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Téléphone</mat-label>
+          <input matInput [(ngModel)]="stagiaire.telephone" [readonly]="!isEditing">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Adresse</mat-label>
+          <textarea matInput [(ngModel)]="stagiaire.adresse" [readonly]="!isEditing"></textarea>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Diplôme</mat-label>
+          <input matInput [(ngModel)]="stagiaire.diplome" [readonly]="!isEditing">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Titre du Diplôme</mat-label>
+          <input matInput [(ngModel)]="stagiaire.titreDiplome" [readonly]="!isEditing">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Type de Stage</mat-label>
+          <mat-select [(ngModel)]="stagiaire.typeStage" [disabled]="!isEditing">
+            <mat-option value="stage_observation">Stage d'observation</mat-option>
+            <mat-option value="stage_application">Stage d'application</mat-option>
+            <mat-option value="stage_perfectionnement">Stage de perfectionnement</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="file-links">
+          <p><strong>CV:</strong> <a [href]="'http://localhost:5000/'+stagiaire.cv" target="_blank">Télécharger le CV</a></p>
+        </div>
+        <mat-form-field appearance="outline" [hidden]="stagiaire.startDate == null">
+          <mat-label>Date de début de stage</mat-label>
+          <input matInput [value]="stagiaire.startDate | date:'longDate'" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="outline" [hidden]="stagiaire.endDate == null">
+          <mat-label>Date de fin de stage</mat-label>
+          <input matInput [value]="stagiaire.endDate | date:'longDate'" readonly>
+        </mat-form-field>
+      </div>
+      <div class="button-group">
+        <button mat-raised-button color="primary" (click)="edit()" [hidden]="!isEdit">Modifier</button>
+        <button mat-raised-button color="accent" (click)="save()" *ngIf="isEditing">Enregistrer</button>
+        <button mat-raised-button color="warn" (click)="cancel()" *ngIf="isEditing">Annuler</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

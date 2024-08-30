@@ -1,0 +1,79 @@
+<div>
+  <mat-toolbar class="custom-toolbar">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()" class="mobile-menu-button" fxShow fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="logo-container">
+        <img src="logo.png" alt="STAGEMANAGE" class="logo">
+      </span>
+      <span class="app-name">STAGEMANAGE</span>
+      <span class="menu-spacer"></span>
+      <div class="desktop-menu" fxShow fxHide.lt-md>
+        <a *ngIf="user" routerLink="/home" mat-button>
+          <mat-icon>home</mat-icon> Accueille
+        </a>
+       
+        <a href="#" routerLink="/stages" mat-button *ngIf="user">
+          <mat-icon>{{ user?.role === 'encadrantCompte' ? 'work_outline' : 'school' }}</mat-icon> {{user?.role === 'encadrantCompte' ? 'Stages' : 'Stage'}}
+        </a>
+        <a href="#" routerLink="/projects-list" mat-button *ngIf="user">
+          <mat-icon>assignment</mat-icon> {{user?.role === 'encadrantCompte' ? 'Projects' : 'Projet'}}
+        </a>
+        <a href="#" routerLink="/inscription" mat-button *ngIf="!user">
+          <mat-icon>how_to_reg</mat-icon> Inscription
+        </a>
+        <a href="#" routerLink="/login" mat-button *ngIf="!user">
+          <mat-icon>login</mat-icon> Connexion
+        </a>
+        <a href="#" routerLink="/stagiaire" mat-button *ngIf="user">
+          <mat-icon>{{user?.role === 'stagiairesCompte' ? 'account_circle' : 'supervisor_account'}}</mat-icon>{{user?.role === 'stagiairesCompte' ? user?.username : 'Stagiaires'}}
+        </a>
+        <a href="#" routerLink="/feedback" mat-button *ngIf="user">
+          <mat-icon>help_outline</mat-icon> Aide
+        </a>
+        <a href="#" routerLink="/login" mat-button (click)="logout()" *ngIf="user">
+          <mat-icon>logout</mat-icon> Déconnexion
+        </a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav mode="over" fxLayout="column">
+      <mat-nav-list>
+        <span *ngIf="user" routerLink="/stagiaire" class="user-info" style="cursor: pointer;">
+          <mat-icon>account_circle</mat-icon> {{ user?.username }}
+        </span>
+        <a (click)="sidenav.toggle()" routerLink="/home" mat-list-item>
+          <mat-icon>close</mat-icon> Fermer
+        </a>
+        <a *ngIf="user" routerLink="/home" mat-list-item>
+          <mat-icon>home</mat-icon> Accueille
+        </a>
+     
+        <a href="#" routerLink="/stages" mat-list-item *ngIf="user">
+          <mat-icon>{{ user?.role === 'encadrantCompte' ? 'work_outline' : 'school' }}</mat-icon>  {{user?.role === 'encadrantCompte' ? 'Stages' : 'Stage'}}
+        </a>
+        <a href="#" mat-list-item routerLink="/projects-list" *ngIf="user">
+          <mat-icon>assignment</mat-icon> {{user?.role === 'encadrantCompte' ? 'Projects' : 'Projet'}}
+        </a>
+        <a href="#" routerLink="/inscription" mat-list-item *ngIf="!user">
+          <mat-icon>how_to_reg</mat-icon> Inscription
+        </a>
+        <a href="#" routerLink="/login" mat-list-item *ngIf="!user">
+          <mat-icon>login</mat-icon> Connexion
+        </a>
+        <a href="#" routerLink="/feedback" mat-list-item  *ngIf="user">
+          <mat-icon>help_outline</mat-icon> Aide
+        </a>
+        <a href="#" routerLink="/login" mat-list-item (click)="logout()" *ngIf="user">
+          <mat-icon>logout</mat-icon> Déconnexion
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

@@ -1,0 +1,83 @@
+<app-loader *ngIf="isLoading"></app-loader>
+<div class="home-container"  *ngIf="!isLoading">
+  <!-- Section de Bienvenue -->
+  <section class="welcome-section mat-elevation-z6">
+    <mat-icon>dashboard</mat-icon>
+    <h1>Bienvenue dans votre espace stagiaire</h1>
+    <p>Gérez vos projets, suivez vos stages et restez informé.</p>
+    <img src="portail-header-img-desktop.webp" alt="Image de bienvenue">
+  </section>
+
+  <!-- Informations sur l'Établissement -->
+  <section class="info-section mat-elevation-z6">
+    <mat-icon>business</mat-icon>
+    <h2>À propos de l'établissement de stage</h2>
+    <p>
+      Notre établissement s'engage à fournir un environnement de stage riche en apprentissage. Nous croyons que chaque stagiaire peut apporter une valeur unique et nous nous efforçons de vous offrir les outils nécessaires pour réussir.
+    </p>
+  </section>
+
+  <!-- Calendrier des Jours Fériés -->
+  <section class="calendar-section mat-elevation-z6">
+    <mat-icon>calendar_today</mat-icon>
+    <h2>Calendrier des Jours Fériés</h2>
+    <ul>
+      <li>Anniversaire de la Marche Verte : 6 novembre</li>
+      <li>Fête de l’Indépendance : 18 novembre</li>
+      <li>Nouvel An: 1er janvier</li>
+      <li>Manifeste de l’Indépendance: 11 janvier</li>
+      <li>Nouvel An Amazigh: 14 janvier</li>
+      <li>Fête du Travail: 1er mai</li>
+      <li>Fête du Trône: 30 juillet</li>
+      <li>Allégeance Oued Eddahab: 14 août</li>
+      <li>Révolution du Roi et du Peuple: 20 août</li>
+      <li>Fête de la Jeunesse: 21 août</li>
+      <li>Anniversaire de la Marche Verte : 6 novembre</li>
+      <li>Fête de l’Indépendance : 18 novembre</li>
+    </ul>
+    <button mat-raised-button color="primary" (click)="downloadPDF()">
+      <mat-icon style="color: white">download</mat-icon> Télécharger en PDF
+    </button>
+  </section>
+
+  <!-- Conseils pour les Stagiaires -->
+  <section class="tips-section mat-elevation-z6">
+    <mat-icon>lightbulb</mat-icon>
+    <h2>Conseils pour les Stagiaires</h2>
+    <ul>
+      <li>Communiquez régulièrement avec votre encadrant.</li>
+      <li>Faites preuve d'initiative et n'ayez pas peur de poser des questions.</li>
+      <li>Documentez votre travail et vos apprentissages.</li>
+      <li>Restez organisé et respectez les deadlines.</li>
+    </ul>
+  </section>
+
+  <!-- Ressources Utiles -->
+  <section class="resources-section mat-elevation-z6">
+    <mat-icon>help</mat-icon>
+    <h2>Ressources Utiles</h2>
+    <ul>
+      <li><a href="guide.pdf" target="_blank">Guide du Stagiaire</a></li>
+      <li><a href="https://www.provinceberkane.ma/" target="_blank">Site de l'Etablissement</a></li>
+      <li><a href="#" routerLink="/feedback">FAQ</a></li>
+    </ul>
+  </section>
+
+  <!-- Conditions d'Établissement -->
+  <section class="user-conditions mat-elevation-z6">
+    <h2>Conditions d'établissement</h2>
+    <p dir="ltr">
+      La province de Berkane s’engage au traitement de vos données personnelles par les moyens techniques dans un cadre légal. Les informations recueillies sur le site provinceberkane.ma font l’objet d’un traitement destiné à faciliter l’accès aux services électroniques lancés par la province. Les destinataires de données sont les services de la province et ses annexes administratives, et parfois certains services extérieurs qui participent à la production de la réponse à votre demande. Conformément à la loi 09-08 promulguée par le Dahir 01-09-15 du 18 février 2009, relative à la protection des personnes physiques à l’égard du traitement des données à caractère personnel, vous bénéficiez d’un droit d’accès et de rectification aux informations qui vous concernent, que vous pouvez exercer en vous adressant à l’adresse e-mail suivante : admin&#64;provinceberkane.ma Vous pouvez également, pour des motifs légitimes, vous opposer à ce que les données vous concernant fassent l’objet d’un traitement. Ce traitement a été notifié et autorisé par la CNDP sous N° A-W-519/2023. Du 21/06/2023.
+    </p>
+    <img src="verified.png" alt="Certification" class="verified-icon">
+  </section>
+
+  <!-- Section de Contact -->
+  <section class="contact-section mat-elevation-z6">
+    <mat-icon>contact_support</mat-icon>
+    <h2>Besoin d'aide?</h2>
+    <p>
+      Contactez-nous à <a href="mailto:support@example.com">stagemanage.province&#64;gmail.com</a> pour toute question ou assistance.
+    </p>
+  </section>
+</div>

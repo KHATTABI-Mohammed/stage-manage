@@ -1,0 +1,132 @@
+.project-detail-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 10px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+mat-card {
+  padding: 20px;
+  border: 1px solid #ff9800;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  mat-card-header {
+    background-color: #ffe0b2;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    align-items: center;
+  }
+
+  mat-card-title {
+    font-weight: bold;
+    color: #ef6c00;
+  }
+
+  mat-card-subtitle {
+    color: #ff9800;
+  }
+
+  mat-card-content {
+    font-size: 16px;
+    color: #616161;
+  }
+
+  mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    button {
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #ffb74d;
+      }
+
+      mat-icon {
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .project-detail-container {
+    padding: 0;
+  }
+
+  mat-card {
+    padding: 10px;
+
+    mat-card-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    mat-card-title, mat-card-subtitle {
+      text-align: left;
+      font-size: 1.2rem;
+    }
+
+    mat-card-actions {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+.submission-section,
+.encadrant-section {
+  margin-top: 20px;
+}
+
+.file-upload {
+  margin: 15px 0;
+
+  .file-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .file-input {
+    width: 100%;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+mat-mini-button {
+  font-size: 0.8rem;
+  padding: 5px 10px;
+  max-width: 36px;
+  margin-top: 10px;
+
+  mat-icon {
+    font-size: 1rem;
+    margin-right: 3px;
+  }
+}

@@ -1,0 +1,45 @@
+<app-loader *ngIf="isLoading"></app-loader>
+
+<!-- Message lorsque la liste des stagiaires est vide -->
+<div *ngIf="!isLoading && stagiaires.length === 0">
+  <mat-card class="message-card animate__animated animate__fadeIn">
+    <mat-card-content>
+      <mat-icon>info_outline</mat-icon>
+      <p *ngIf="user?.role === 'stagiairesCompte'">
+        Vous n'avez pas encore créé votre profil. <br>
+        <strong><a routerLink="/add-stagiaire">Cliquez ici pour créer votre compte.</a></strong>
+      </p>
+      <p *ngIf="user?.role === 'encadrantCompte'">
+        Aucun stagiaire n'est actuellement disponible sous votre supervision.
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<!-- Liste des stagiaires -->
+<div *ngIf="!isLoading && stagiaires.length > 0" class="container animate__animated animate__fadeInUp">
+  <mat-card class="stagiaire-card animate__animated animate__zoomIn" *ngFor="let stagiaire of stagiaires">
+    <mat-card-header>
+      <div mat-card-avatar class="stagiaire-photo" [style.background-image]="'url(http://localhost:5000/' + stagiaire.photo + ')'"></div>
+      <mat-card-title>{{ stagiaire.nom }} {{ stagiaire.prenom }}</mat-card-title>
+      <mat-card-subtitle>{{ stagiaire.email }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p><mat-icon>location_on</mat-icon> <strong>Adresse:</strong> {{ stagiaire.adresse }}</p>
+      <p><mat-icon>phone</mat-icon> <strong>Téléphone:</strong> {{ stagiaire.telephone }}</p>
+      <p><mat-icon>description</mat-icon> <strong>CV:</strong> <a [href]="'http://localhost:5000/'+stagiaire.cv" target="_blank">Télécharger le CV</a></p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" [routerLink]="['/detail-stagiaire', stagiaire.id]">
+        <mat-icon>visibility</mat-icon> Voir Détails
+      </button>
+      <button mat-raised-button color="warn" (click)="openDeleteDialog(stagiaire.id)">
+        <mat-icon>delete</mat-icon> Supprimer
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+
+
+

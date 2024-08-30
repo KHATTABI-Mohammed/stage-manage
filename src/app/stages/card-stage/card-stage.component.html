@@ -1,0 +1,42 @@
+<app-loader *ngIf="isLoading"></app-loader>
+
+<div class="container" *ngIf="!isLoading">
+  <div *ngIf="stages.length === 0" class="no-stages-message">
+    <mat-icon>info_outline</mat-icon>
+    Aucun stage n'est actuellement disponible.
+  </div>
+  
+  <mat-card class="stage-card" *ngFor="let stage of stages" [@fadeIn]>
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+     <mat-card-title>{{ stage.titre_stage }}</mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <p><mat-icon>date_range</mat-icon><strong>Date de début:</strong> {{ stage.startDate | date }}</p>
+      <p><mat-icon>date_range</mat-icon><strong>Date de fin:</strong> {{ stage.endDate | date }}</p>
+      
+      <div *ngIf="stage.stageAffectations?.length">
+        <p><mat-icon>group</mat-icon><strong>Stagiaires inscrits:</strong></p>
+        <div *ngFor="let stagiaire of stage.stageAffectations; let i = index">
+          <p>{{ i + 1 }}. {{ stagiaire.infoStagiaire }}</p>
+          <p><mat-icon>event</mat-icon><strong>Date d'inscription:</strong> {{ stagiaire.dateAffectation | date }}</p>
+          <hr>
+        </div>
+      </div>
+    </mat-card-content>
+    
+    <mat-card-actions>
+      <button mat-raised-button color="accent" (click)="openInscriptionDialog(stage.id)" *ngIf="user?.role !== 'encadrantCompte' && !stagiaire?.idStage">
+        <mat-icon>person_add</mat-icon> Inscrire
+      </button>
+      <button mat-raised-button color="primary" [routerLink]="['/detail-stage', stage.id]">
+        <mat-icon>visibility</mat-icon> Voir Détails
+      </button>
+      <button mat-raised-button color="warn" (click)="openDeleteDialog(stage.id)" [hidden]="!isAddStage">
+        <mat-icon>delete</mat-icon> Supprimer
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+

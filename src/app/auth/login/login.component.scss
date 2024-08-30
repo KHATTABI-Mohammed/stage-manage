@@ -1,0 +1,120 @@
+.login {
+    width: 60%;
+    margin: 100px auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+
+    .loginhead {
+        margin-top: -40px;
+        margin-bottom: 20px;
+
+        h2 {
+            display: inline-block;
+            padding: 5px 88px;
+            background-color: #f99a41;
+            border-radius: 30px;
+            font-size: 28px;
+            color: #FFF;
+        }
+    }
+
+    mat-form-field {
+        width: 100%;
+    }
+
+    .loginfoot {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+
+        button {
+            margin-top: 15px;
+            padding: 0px 30px;
+            font-size: 18px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .login {
+        width: 70%;
+    }
+
+    .loginhead h2 {
+        padding: 5px 60px;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 992px) {
+    .login {
+        width: 80%;
+    }
+
+    .loginhead h2 {
+        padding: 5px 40px;
+        font-size: 22px;
+    }
+
+    .loginfoot {
+        flex-direction: column;
+        align-items: flex-start;
+
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        a {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .login {
+        width: 90%;
+    }
+
+    .loginhead h2 {
+        padding: 5px 30px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .login {
+        width: 95%;
+        margin: 50px auto;
+        padding: 15px;
+    }
+
+    .loginhead h2 {
+        padding: 5px 20px;
+        font-size: 18px;
+    }
+
+    .loginfoot {
+        button {
+            font-size: 14px;
+        }
+    }
+}
+
+.alert-danger {
+    background-color: #f99a41;
+    color: #FFF;
+    margin-top: 15px;
+    font-size: 18px;
+}
+

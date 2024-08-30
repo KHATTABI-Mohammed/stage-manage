@@ -1,0 +1,42 @@
+<app-loader *ngIf="isLoading"></app-loader>
+<div class="dashboard-container" *ngIf="!isLoading">
+  <!-- Statistiques des stagiaires -->
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon>analytics</mat-icon> Statistiques des Stagiaires
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card>
+      <p><mat-icon>group</mat-icon> Nombre total de stagiaires: {{ stagiairesCount }}</p>
+      <p><mat-icon>male</mat-icon> Nombre de stagiaires hommes: {{ maleStagiairesCount }}</p>
+      <p><mat-icon>female</mat-icon> Nombre de stagiaires femmes: {{ femaleStagiairesCount }}</p>
+      <p><mat-icon>school</mat-icon> Nombre de stages d'application: {{ stageApplicationCount }}</p>
+      <p><mat-icon>school</mat-icon> Nombre de stages d'observation: {{ stageObservationCount }}</p>
+    </mat-card>
+  </mat-card>
+
+  <!-- Répartition des Stagiaires par Sexe -->
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon>pie_chart</mat-icon> Répartition des Stagiaires par Sexe
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <canvas id="sexeChart"></canvas>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Histogramme des Stagiaires par Diplôme -->
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon>bar_chart</mat-icon> Stagiaires par Diplôme
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <canvas id="diplomaChart"></canvas>
+    </mat-card-content>
+  </mat-card>
+</div>

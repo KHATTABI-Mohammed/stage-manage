@@ -1,0 +1,56 @@
+<app-loader *ngIf="isLoading"></app-loader>
+<div *ngIf="!isLoading">
+<div *ngIf="projects.length === 0" class="no-stages-message">
+  <mat-icon>warning</mat-icon> Aucun projet n'est actuellement disponible.
+</div>
+
+<mat-card class="project-card" *ngIf="!stagiaire?.idProjet && user?.role === 'stagiaireCompte'" >
+  <mat-card-header>
+    <mat-card-title>Aucun projet à faire !</mat-card-title>
+    <mat-icon>check_circle</mat-icon>
+  </mat-card-header>
+</mat-card>
+
+<div class="container" >
+  <mat-card class="project-card" *ngFor="let project of projects" [@cardAnimation]>
+    <mat-card-header>
+      <mat-card-title>{{ project.nom }}</mat-card-title>
+      <mat-icon style="color: #ef6c00;">folder</mat-icon>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>Date Rendu:</strong> {{ project.dateRendu | date }}</p> 
+      <p *ngIf="project.affectationStagiaires?.length"><strong>Stagiaire affecté à ce projet:</strong></p>
+      <div *ngIf="project.affectationStagiaires?.length">
+        <div *ngFor="let stagiaire of project.affectationStagiaires; let i = index" class="stagiaire-info" [ngClass]="stagiaire.isValider ? 'stagiaire-valid' : 'stagiaire-invalid'">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <p style="display: inline-block;">{{ i + 1 }}. {{ stagiaire.infoStagiaire }}</p>  
+            <mat-icon [ngClass]="{
+              'valid-icon': stagiaire.isValider,
+              'invalid-icon': !stagiaire.isValider
+            }">
+              {{ stagiaire?.isValider ? 'check_circle' : 'cancel' }}
+            </mat-icon>
+          </div>
+          <p><strong>Date d'affectation:</strong> {{ stagiaire.dateAffectation | date }}</p>
+          <hr>
+        </div>
+        
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="accent" *ngIf="stagiaires.length > project.affectationStagiaires?.length && user?.role === 'encadrantCompte'" (click)="openAssignDialog(project)">
+        <mat-icon>person_add</mat-icon> Affecter
+      </button>
+      <button mat-raised-button color="primary" [routerLink]="['/projects-detail', project.id]">
+        <mat-icon>visibility</mat-icon> Voir Détails
+      </button>
+      <button mat-raised-button color="warn" (click)="openDeleteDialog(project.id)" *ngIf="user?.role === 'encadrantCompte'">
+        <mat-icon>delete</mat-icon> Supprimer
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+
+
+</div>

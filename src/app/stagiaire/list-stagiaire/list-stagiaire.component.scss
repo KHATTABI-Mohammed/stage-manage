@@ -1,0 +1,188 @@
+/* Container for the table */
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+  border: 1px solid #ff9800;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.table-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 16px;
+  text-align: left;
+}
+
+th {
+  background-color: #ffe0b2;
+  font-weight: bold;
+  color: #ef6c00;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  border-bottom: 2px solid #ff9800;
+}
+
+td {
+  color: #616161;
+}
+
+mat-icon {
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+button {
+  margin-right: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff9800;
+  color: #fff;
+}
+
+/* Floating Action Button Container */
+.fab-container {
+  position: fixed;
+  bottom: 40px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .table-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  button {
+    margin: 4px;
+  }
+}
+
+/* Message card styles */
+.message-card {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  font-size: 18px;
+  color: #ff5722;
+  background-color: #fff3e0;
+  border: 1px solid #ff9800;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation classes */
+.animate__animated.animate__fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate__animated.animate__fadeInUp {
+  animation: fadeInUp 0.5s ease-in-out;
+}
+
+.animate__animated.animate__zoomIn {
+  animation: zoomIn 0.5s ease-in-out;
+}
+
+/* Additional styles for animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* General Styles */
+.table-container {
+  margin: 20px;
+  overflow-x: auto;
+}
+
+.message-card {
+  margin: 20px;
+  text-align: center;
+  p {
+    font-size: 16px;
+    color: #757575;
+    strong {
+      color: #3f51b5;
+    }
+  }
+}
+
+/* Row Styles */
+.validated {
+  background-color: #e8f5e9; /* Light green */
+  color: #2e7d32;
+}
+
+.not-validated {
+  background-color: #ffebee; /* Light red */
+  color: #c62828;
+}
+
+/* Search Bar Styles */
+.search-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 20px;
+  
+}
+
+.mat-form-field {
+  width: 300px;
+}
